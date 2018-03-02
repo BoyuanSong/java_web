@@ -1,0 +1,69 @@
+.header {
+	margin : 90px auto 0px;
+	width: 55%;
+}
+#logo {
+	float:left;
+}
+nav {
+	float:right;
+}
+nav a {
+	color: black;
+	padding: 15px 10px 0px;
+	text-decoration:none;
+}								/*撐開選項 讓空白處也可點選*/
+nav a:hover {
+	color: #ddd;
+}
+ul {
+	list-style-type: none;
+}
+nav li {
+	float:left;
+}								/*nav水平排列*/	
+.clearfix {
+	clear: both;
+	margin-bottom: 60px;
+}								/*標頭和內容間的空白*/
+#content {
+	margin : 0px auto 0px;
+	width: 60%;
+}
+.work {
+	margin-top: 30px;
+	margin-right: 1%;
+	float: left;
+	width: 24%;
+}
+.work img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+p {
+	font-size: 10px;
+}								/*location裡的字的大小*/
+#contact {
+	width: 408px;
+	float: right;
+}
+#about_pic {
+
+	display: block;
+	float: left;
+	width: 55%;
+	margin-right: 3%;
+}
+#about_content {
+	padding-top: 0px;
+	width: 40%;
+	float: right;
+	font-size: : 8px;
+}
+#about_content h5 {
+	margin-top: 0px;
+}
+#about_content p {
+	margin: 8px 0px;
+}

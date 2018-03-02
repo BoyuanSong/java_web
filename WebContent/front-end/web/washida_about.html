@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>wasida</title>
+<link href="washida.css" rel="stylesheet">
+<script src="../../js/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('ul a:not(#shop)').click(function() {
+		var url = $(this).attr('href');
+		$('.content').load(url + ' .content');
+		return false;
+	}); //end click 用ajax讀取非shop連結的內容
+}); // end ready 
+</script>
+</head>
+<body>
+	<div class="header">
+		<a href="washida_news.html"><img src="pic/web_logo.png" id="logo" width="150px" height="30px"></a>
+		<nav>
+			<ul>
+				<li><a href="washida_news.html">NEWS</a></li>
+				<li><a href="washida_about.html">ABOUT</a></li>
+				<li><a href="/Web/front-end/shop/productAll.jsp" id="shop">SHOP</a></li>
+				<li><a href="washida_location.html">LOCATION</a></li>
+			</ul>
+		</nav>
+		<div class="clearfix"></div>
+
+		<div class="content">
+			<img src="pic/about-resized.gif" alt="" id="about_pic">
+			<div id="about_content">
+				<h5>公司概覽 :</h5>
+				<p>Since 2007, washida.co main focus on the sensibility of urban
+					life, the pure projection of object in space, good quality of
+					texture and the humanities of aesthetics. In these years, we have
+					shared good designs and user experience with people, and now, we
+					want to tell more stories.</p>
+				<br>
+				<p>" washida HOME" is our newly opened select shop in Taichung
+					city, Taiwan, with the concept of home, coffee, life, art and
+					comfortable open space. Here might be a place for you to keep a
+					little bit unmindful, keep following our hearts freely and create a
+					new vision for tomorrow.</p>
+				<br>
+				<p>自2007年成立的服飾選貨品牌washida，渴望追求都市生活的感性，簡單基本的
+					調性，良好的素材與質地，時時關注人文美學是品牌的主要核心。自選品、設計
+					開發到製作，期待透過使用者的經驗累積，進而與更多人分享傳播良質生活的概 念。</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

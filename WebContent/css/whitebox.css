@@ -1,0 +1,36 @@
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.work {
+	position: relative;
+	background-color: #ccc;
+}
+
+.info {						/*黑色屏幕 預設透明度0*/
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: rgba(0, 0, 0, .7);
+	color: white;
+}
+
+.info:hover {
+	opacity: 1;
+}							/*滑鼠目標的黑幕透明度變1*/
+
+.whitebox {					/*白色邊框*/
+	position: absolute;
+	top: 4%;
+	left: 4%;
+	width: 92%;
+	height: 92%;
+	padding-top: 40px;
+}

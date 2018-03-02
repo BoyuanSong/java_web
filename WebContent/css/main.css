@@ -1,0 +1,60 @@
+#loginBackground {
+	background-color: #3179b5;
+	height: 1000px;
+	
+}
+#loginBox {
+	background-color: #fff;
+	height: 300px;
+	width: 520px;
+	border-radius: 2%;
+	margin-top: 90px;
+}
+#loginBox h2 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+#loginBox input {
+	margin: 10px 0px;
+}
+
+#navBackground {
+	background-color: #EEFFBB;
+	height: 100%;
+}
+#navHeader {
+	margin: 20px 0px;
+}
+
+.bListTitle{
+	margin-top: 10px;
+	background: #ececec;
+    color: #666;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 700;
+	border-radius: 10px 10px 0px 0px;
+	border: 1px solid #e7e3e7;	
+}
+.bListConent{
+	padding: 20px;
+	border: 1px solid #e7e3e7;
+	height: 490px;
+	border-radius: 0px 0px 10px 10px;
+}
+.bFooter{
+	margin-top: 10px;
+	color: #ccc;
+	background-color: #fff;
+	text-align: center;
+}
+
+.msgtitle:nth-child(even) {
+	background-color: #F5F5F5;
+}
+.msgtitle:hover {
+	background-color: #FFFFE0;
+}
+a:hover {
+	text-decoration:none;
+}
