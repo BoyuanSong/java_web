@@ -1,6 +1,7 @@
 package com.employee.controller;
 
 import com.employee.model.*;
+import com.emp_permission.model.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.*;
@@ -241,9 +242,22 @@ public class EmployeeServlet extends HttpServlet {
 					return;
 				}
 
-				// 3.登入成功 準備轉交至佈告欄首頁
+				// 3.登入成功  取得登入員工的權限 準備轉交至佈告欄首頁
+				
+				Set<Emp_permissionVO> permissionList = (new Emp_permissionService()).getAllByEmpno(employeeVO.getEmpno());
+
+				Set<String> panel_Heading = new HashSet<String>();
+				Set<String> panel_Body = new HashSet<String>();
+				for (Emp_permissionVO vo : permissionList) {
+					String firstChar = String.valueOf(vo.getPermno().charAt(0));
+					panel_Heading.add(firstChar);
+					panel_Body.add(vo.getPermno());
+				}
+				
 				HttpSession session = req.getSession();
 				session.setAttribute("employeeVO", employeeVO);
+				session.setAttribute("panel_Body", panel_Body);
+				session.setAttribute("panel_Heading", panel_Heading);
 				res.sendRedirect(req.getContextPath() + "/back-end/msgbroad/msgAll.jsp?target=msg");
 
 			} catch (Exception e) {

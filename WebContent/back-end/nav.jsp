@@ -6,22 +6,7 @@
 <%@ page import="com.employee.model.*"%>
 <%
 	// 用URL?target=XXX 來判斷哪個panel會打開
-	String target = request.getParameter("target");
-
-	// 取得登入員工的所有權限
-	EmployeeVO employeeVO = (EmployeeVO) session.getAttribute("employeeVO");
-	Set<Emp_permissionVO> permissionList = (new Emp_permissionService()).getAllByEmpno(employeeVO.getEmpno());
-
-	Set<String> panel_Heading = new HashSet<String>();
-	Set<String> panel_Body = new HashSet<String>();
-
-	for (Emp_permissionVO vo : permissionList) {
-		String firstChar = String.valueOf(vo.getPermno().charAt(0));
-		panel_Heading.add(firstChar);
-		panel_Body.add(vo.getPermno());
-	}
-	session.setAttribute("panel_Body", panel_Body);
-	session.setAttribute("panel_Heading", panel_Heading);
+	String target = request.getParameter("target");	
 %>
 <!DOCTYPE>
 <html>
@@ -58,11 +43,7 @@
 							</h4>
 						</div>
 						
-						<% if (target != null && target.equals("msg")) { %>
-						<div id="area1" class="panel-collapse collapse in">
-						<% } else { %>
-						<div id="area1" class="panel-collapse collapse">
-						<% } %>
+						<div id="area1" class="panel-collapse collapse <%if(target.equals("msg")){%>in<%}%>">
 							<div class="panel-body">
 								<a href="<%=request.getContextPath()%>/back-end/msgbroad/msgAll.jsp?target=msg">佈告欄瀏覽</a>
 							</div>
@@ -78,11 +59,7 @@
 							</h4>
 						</div>
 						
-						<% if (target != null && target.equals("emp")) { %>
-						<div id="area2" class="panel-collapse collapse in">
-						<% } else { %>
-						<div id="area2" class="panel-collapse collapse">
-						<% } %>
+						<div id="area2" class="panel-collapse collapse <%if(target.equals("emp")){%>in<%}%>">
 							<c:if test="${fn:contains(panel_Body, 'E01')}">
 								<div class="panel-body">
 									<a href="<%=request.getContextPath()%>/back-end/employee/empListAll.jsp?target=emp">員工管理</a>
@@ -107,11 +84,7 @@
 								</h4>
 							</div>
 							
-							<% if (target != null && target.equals("front")) { %>
-							<div id="area3" class="panel-collapse collapse in">
-							<% } else { %>
-							<div id="area3" class="panel-collapse collapse">
-							<% } %>
+							<div id="area3" class="panel-collapse collapse <%if(target.equals("front")){%>in<%}%>">
 								<c:if test="${fn:contains(panel_Body, 'F01')}">
 									<div class="panel-body">
 										<a href="<%=request.getContextPath()%>/back-end/front-web/news.jsp?target=front">消息管理</a>
