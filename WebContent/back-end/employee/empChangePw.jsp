@@ -48,7 +48,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="bFooter">lst448@hotmail.com &copy; 2018 All rightsreserved.</div>
+			<div class="bFooter">sby318@gmail.com &copy; 2018 All rightsreserved.</div>
 		</div>
 	</div>
 </div>

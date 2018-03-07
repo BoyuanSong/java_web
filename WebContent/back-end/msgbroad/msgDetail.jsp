@@ -105,7 +105,7 @@
 					</FORM>
 				</div>
 			</div>
-			<div class="bFooter">lst448@hotmail.com &copy; 2018 All rightsreserved.</div>
+			<div class="bFooter">sby318@gmail.com &copy; 2018 All rightsreserved.</div>
 			
 			<!-- Modal -->
 			<div class="modal fade" id="addCommemtModal" tabindex="-1" role="dialog" aria-labelledby="#addCommemtModal" aria-hidden="true">
