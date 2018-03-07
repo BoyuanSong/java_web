@@ -39,13 +39,11 @@
 .bListConent{
 	padding: 20px;
 	border: 1px solid #e7e3e7;
-	height: 490px;
+	height: 92%;
 	border-radius: 0px 0px 10px 10px;
 }
 .bFooter{
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    position: absolute;
     width: 100%;
 	color: #ccc;
 	background-color: #fff;
