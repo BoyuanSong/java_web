@@ -31,7 +31,8 @@
 						<input type="date" name="empbirth" id="empdate" value="<%=(errorEmpVO == null) ? "" : errorEmpVO.getEmpbirth()%>" />
 					</div>
 					<div class="form-actions">
-						<input type="submit" value="新增員工" class="btn btn-default">
+						<input type="submit" value="送出" class="btn btn-primary">
+						<a class="btn btn-default" href="empListAll.jsp?whichPage=${param.whichPage}&target=emp" role="button">回上頁</a>
 						<input type="button" value="quick" class="btn" id="quickEmpAddBtn">
 						<input type="hidden" name="action" value="insert">
 					</div>

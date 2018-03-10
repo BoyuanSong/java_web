@@ -39,7 +39,7 @@
 						<th>狀態</th>
 						<th>員工管理</th>
 						<th>
-							<a class="btn btn-md btn-warning" href="<%=request.getContextPath()%>/back-end/employee/empAdd.jsp?target=emp" role="button">
+							<a class="btn btn-md btn-warning" href="<%=request.getContextPath()%>/back-end/employee/empAdd.jsp?target=emp&whichPage=${param.whichPage}" role="button">
 								<span class="glyphicon glyphicon-plus"></span>新增員工
 							</a>
 						</th>
