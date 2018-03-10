@@ -41,7 +41,7 @@ List<MsgbroadVO> list = (List<MsgbroadVO>)session.getAttribute("list");
 							</td>
 							<td>
 								<a href="<%=request.getContextPath()%>/back-end/msgbroad/msgbroad.do?
-									msgno=${msgbroadVO.msgno}&requestURL=<%=request.getServletPath()%>&whichPage=<%=whichPage%>&action=getOne_For_Show">
+									msgno=${msgbroadVO.msgno}&requestURL=msgResult&whichPage=<%=whichPage%>&action=getOne_For_Show">
 									<b>${msgbroadVO.title}</b>
 								</a>
 							</td>

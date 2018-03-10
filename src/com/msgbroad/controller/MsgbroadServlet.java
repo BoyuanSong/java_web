@@ -63,8 +63,6 @@ public class MsgbroadServlet extends HttpServlet {
 
 			List<String> errorMsgs = new LinkedList();
 			req.setAttribute("errorMsgs", errorMsgs);
-
-			String requestURL = req.getParameter("requestURL");
 			
 			try {
 				// 1.钡Μ叫―把计
@@ -117,7 +115,7 @@ public class MsgbroadServlet extends HttpServlet {
 				if(requestURL.equals("/back-end/msgbroad/msgResult.jsp")){
 					HttpSession session = req.getSession();
 					HashMap<String, String[]> map = (HashMap<String, String[]>)session.getAttribute("map");
-					List<MsgbroadVO> list  = msgSvc.getAll(map);
+					List<MsgbroadVO> list  = msgSvc.getAll(map); // 狡琩高挡狦
 					req.setAttribute("list",list);
 				}
 				
@@ -137,8 +135,6 @@ public class MsgbroadServlet extends HttpServlet {
 			List<String> errorMsgs = new LinkedList();
 			req.setAttribute("errorMsgs", errorMsgs);
 			
-			String requestURL = req.getParameter("requestURL");
-
 			try {
 				// 1.钡Μ叫―把计
 				String msgno = req.getParameter("msgno");
@@ -198,10 +194,8 @@ public class MsgbroadServlet extends HttpServlet {
 			try {
 				// 1.钡Μ叫―把计
 				HashMap<String, String[]> map = (HashMap)req.getParameterMap();
-				HashMap<String, String[]> map2 = new HashMap<String, String[]>();
-				map2 = (HashMap<String, String[]>)map.clone();
 				HttpSession session = req.getSession();
-				session.setAttribute("map",map2);
+				session.setAttribute("map",map);
 				
 				// 2.非称琩高
 				
@@ -225,18 +219,15 @@ public class MsgbroadServlet extends HttpServlet {
 			req.setAttribute("errorMsgs", errorMsgs);
 			
 			String requestURL = req.getParameter("requestURL");
+			if(requestURL.equals("msgAll")){
+				requestURL = "/back-end/msgbroad/msgAll.jsp?target=msg";
+			} 
+			if(requestURL.equals("msgResult")){
+				requestURL = "/back-end/msgbroad/msgResult.jsp?target=msg";
+			}
 			
 			try {
-				if(requestURL.equals("/back-end/msgbroad/msgResult.jsp")){
-					HttpSession session = req.getSession();
-					HashMap<String, String[]> map = (HashMap<String, String[]>)session.getAttribute("map");
-					MsgbroadService msgSvc = new MsgbroadService();
-					List<MsgbroadVO> list  = msgSvc.getAll(map);
-					req.setAttribute("list",list);
-				}
-				
-				String url = requestURL;
-				RequestDispatcher successView = req.getRequestDispatcher(url+"?target=msg");
+				RequestDispatcher successView = req.getRequestDispatcher(requestURL+"?target=msg");
 				successView.forward(req, res);
 
 			} catch (Exception e) {
