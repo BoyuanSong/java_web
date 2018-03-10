@@ -267,14 +267,10 @@ public class ProductServlet extends HttpServlet {
 				// 2.開始刪除資料
 				ProductService productService = new ProductService();
 				productService.delete(prono);
-
-				// 3.刪除完成,準備轉交
-				String url = "/back-end/front-web/product.jsp?target=front";
-				RequestDispatcher successView = req.getRequestDispatcher(url);
-				successView.forward(req, res);
+				
 			} catch (Exception e) {
 				errorMsgs.add("刪除資料失敗:" + e.getMessage());
-				RequestDispatcher failureView = req.getRequestDispatcher("/back-end/front-web/product.jsp?target=front");
+				RequestDispatcher failureView = req.getRequestDispatcher("/back-end/front-web/productEdit.jsp?target=front");
 				failureView.forward(req, res);
 				
 			}
